@@ -1,7 +1,7 @@
 package stack
 
 type Node struct {
-	Data string
+	Item string
 	Next *Node
 }
 
@@ -19,12 +19,12 @@ func (s *StackOfStrings) Pop() (string, bool) {
 		// stack underflow
 		return "", false
 	}
-	r := s.Head.Data
+	r := s.Head.Item
 	s.Head = s.Head.Next
 	return r, true
 }
 
 func (s *StackOfStrings) Push(content string) {
-	n := Node{Data: content, Next: s.Head}
+	n := Node{Item: content, Next: s.Head}
 	s.Head = &n
 }
